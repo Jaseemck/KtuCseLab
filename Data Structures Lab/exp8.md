@@ -1,5 +1,5 @@
-S3 Datastructures Lab
-Experiment 8
+**S3 Datastructures Lab\
+Experiment 8**
 -----------------------------------------------------------------
 
 Question:
