@@ -8,4 +8,8 @@ The experiments included are given below:\
 #s3\
 *Data Structures Lab (cs 205)
 
+
+#s7\
+*Compiler Design Lab (cs 205)
+
 **An initiative by TEAM NSSCE**
