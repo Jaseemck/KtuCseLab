@@ -1,9 +1,9 @@
 # KtuCseLab
 **KTU CSE LAB EXPERIMENTS**
 
-This repository include all the Lab experiments of Computer Science and Engineering Course as per the latest KTU syllabus.\
-We intend help the students to refer the experiment programs faster than never and make it available and accessible to all.\
-The programs are prone to have bugs. All are welcome to open issues and pull requests. Any help is appreciated.\
+This repository includes all the Lab experiments of Computer Science and Engineering Course as per the latest KTU syllabus.\
+We intend to help the students to refer the experiment programs faster than ever and make it available and accessible to all.\
+The programs are prone to have bugs. All are welcome to create issues and open pull requests. Any help is appreciated.\
 The experiments included are given below:\
 
 #s1\
