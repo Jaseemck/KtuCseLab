@@ -34,4 +34,4 @@ The experiments included are given below:\
 *Compiler Design Lab (cs 431)
 
 
-**An initiative by TEAM NSSCE**
+**An initiative by TEAM OpenSourceCall**
