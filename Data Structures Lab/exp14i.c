@@ -1,7 +1,7 @@
 //S3 Datastructures Lab
 //Experiment 12
 /*
-Implementation of Breadth First Search (BFS)
+Implementation of Breadth First Search (BO)
 */
 
 #include<stdio.h>
@@ -18,7 +18,7 @@ int adj[MAX][MAX];
 int state[MAX]; 
 void create_graph();
 void BF_Traversal();
-void BFS(int v);
+void BO(int v);
  
 int queue[MAX], front = -1,rear = -1;
 void insert_queue(int vertex);
@@ -39,12 +39,12 @@ void BF_Traversal()
     for(v=0; v<n; v++) 
         state[v] = initial;
     
-    printf("Enter Start Vertex for BFS: \n");
+    printf("Enter Start Vertex for BO: \n");
     scanf("%d", &v);
-    BFS(v);
+    BO(v);
 }
  
-void BFS(int v)
+void BO(int v)
 {
     int i;
     
