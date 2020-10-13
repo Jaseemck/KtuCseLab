@@ -1,106 +1,59 @@
 #include<stdio.h>
-#include<stdlib.h>
+int main(){
+ int frames;
+ printf("Enter number of frames\n");
+ scanf("%d",&frames);
+ int rf[100];
+ printf("Enter the reference string max size 20 end with -1\n");
+ int i;
+ int ele;
+ ele=0;
+ int lg;
+ lg=0;
+ for(i=0;i<20;i++){
+ scanf("%d",&ele);
+ rf[i]=ele;
+ if(ele==-1)
+ break;
+ lg++;
+ }
+ int pf[frames];
+ int miss;
+ for(i=0;i<frames;i++)
+ pf[i]=-1;
+ int pos=0;
+ int rp;
+ int k;k=0;
+ int h;h=0;
+ miss=lg;
+ while(rf[k]!=-1){
+ for(i=0;i<frames;i++){
+ if(rf[k]==pf[i])
+ h=1;
+ }
+ if(h==0){
+ if(pos<frames){
+ pf[pos]=rf[k];
+ pos++;
+ }
+ else{
+ rp=rf[k-frames];
+ for(i=0;i<frames;i++){
+ if(pf[i]==rp)
+ pf[i]=rf[k];
+ }
+ }
+ }
+ else
+ {
+ miss--;
+ }
 
-struct page{
-    int val,i;
-    struct page *next;
-}*head;
-
-int a[20],n,size;
-
-void remlru(struct page *q){
-    int flag,mini;
-    struct page *p=head,*t,*rem;
-    mini=head->i;
-    flag=0;
-    while(p->next!=NULL){
-        if(p->next->i<mini){
-            t=p;
-            mini=p->next->i;
-            flag=1;
-        }
-        p=p->next;
-    }
-    if(flag==0){
-        //remove head
-        p=head;
-        head=head->next;
-        q->next=head;
-        head=q;
-        free(p);
-    }else{
-        //remove t->next
-        rem=t->next;
-        q->next=rem->next;
-        t->next=q;
-        free(rem);
-    }
-}
-
-void lru(){
-    int count,flag,fault;
-    struct page *p;
-    for(int i=0;i<n;i++){
-        flag=0;count=0;
-        if(head==NULL){
-            fault=1;
-            struct page *temp=(struct page*)malloc(sizeof(struct page));
-            temp->i=i;
-            temp->val=a[i];
-            temp->next=NULL;
-            head=temp;
-            flag=1;
-        }else{
-            //check for page fault
-            p=head;
-            while(p!=NULL){
-                if(p->val==a[i]){
-                    flag=1;
-                    p->i=i;
-                    break;
-                }
-                p=p->next;
-            }
-        }
-        //if fault occur
-        struct page *temp=(struct page*)malloc(sizeof(struct page));
-        temp->i=i;
-        temp->val=a[i];
-        temp->next=NULL;
-        if(flag==0){
-            fault++;
-            //check if frame is full
-            p=head;
-            while(p->next!=NULL){
-                p=p->next;
-                count++;
-            }
-            if(count!=size-1)
-                p->next=temp;
-            else{
-                //frame full
-                remlru(temp);    
-            }
-        }
-        printf("\n");
-        p=head;
-        while(p!=NULL){
-            printf("%d-->",p->val);
-            p=p->next;
-        }
-    }
-    printf("\nNumber of faults = %d",fault);
-}
-
-void main(){
-    head=NULL;
-    printf("\nEnter the number of pages: ");
-    scanf("%d",&n);
-    printf("\nEnter the frame size: ");
-    scanf("%d",&size);
-    printf("\nEnter the pages: \n");
-    for(int i=0;i<n;i++){
-        scanf("%d",&a[i]);
-    }
-    lru();
+ k++;
+ h=0;
+ printf("\nStack now\n");
+ for(i=0;i<frames;i++){
+ printf("%d \t",pf[i]);
+ }
+ }
 }
